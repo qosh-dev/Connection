@@ -9,13 +9,13 @@ import SwiftUI
 
 struct audioCall: View {
     
-    var member : Member
+    var user : User
     @Binding var isPresented : Bool
     var body: some View {
         NavigationView{
             ZStack {
                 EmptyView().blur(radius: 10)
-                Image(member.image)
+                Image(user.image)
                     .resizable()
                     .scaledToFill()
                     .cornerRadius(10)
@@ -30,9 +30,10 @@ struct audioCall: View {
                     
                 VStack{
                     VStack{
-                        Text(member.name).font(.title).bold()
-                        Text("@\(member.name.split(separator: " ").joined())")
+                        Text(user.name).font(.title).bold()
+                        Text("@\(user.name.split(separator: " ").joined())")
                             .font(.subheadline)
+                        Text(user.phoneNumber).font(.title2)
                         
                     }
                     .foregroundColor(.black)
@@ -87,8 +88,10 @@ struct audioCall: View {
                     
                 }
                 .zIndex(1)
+                
             }
-        }
+           
+        } .navigationBarHidden(true)
     }
 }
 

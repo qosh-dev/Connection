@@ -8,11 +8,12 @@
 import Foundation
 
 
-struct Member : Hashable {
+struct User : Hashable {
     var id : Int
     var name : String
     var image : String
     var file : Data?
+    var phoneNumber : String
 }
 
 struct Message : Hashable {

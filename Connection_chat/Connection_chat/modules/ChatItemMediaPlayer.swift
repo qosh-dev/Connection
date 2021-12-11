@@ -10,13 +10,13 @@ import SwiftUI
 
 
 struct ChatItemMediaPlayer : View {
-    var member : Member
+    var member : User
     @Binding var isExpanded : Bool
     var body: some View {
         if(isExpanded){
             
             ZStack{
-                MemberImage(imageName: member.image)
+                UserImage(imageName: member.image)
                     .offset(y: -170)
                     .zIndex(1)
                 VStack{

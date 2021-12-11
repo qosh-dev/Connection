@@ -9,7 +9,7 @@ import SwiftUI
 
 
 
-struct MemberImage : View {
+struct UserImage : View {
     var imageName : String
     var body : some View {
         Image(imageName)
@@ -73,9 +73,101 @@ struct SearchBar: View {
                 .transition(.move(edge: .trailing))
                 .animation(.spring())
             }
-            
         }
     }
+}
+
+
+
+struct ModalView<T>: View where T: View {
+    @Binding var  isShowing : Bool
+    var content:   () -> T
+    @State private var isDragging = false
     
+    @State var currHeight: CGFloat = 590
+    var minHeight : CGFloat = 590
+    var maxHeight : CGFloat = 700
+    
+    
+    var body: some View {
+        ZStack(alignment : .bottom){
+            if(isShowing) {
+                Color.black
+                    .opacity(0.3)
+                    .ignoresSafeArea()
+                    .onTapGesture {
+                        isShowing = false
+                    }
+                VStack{
+                        ZStack {
+                            Capsule()
+                                .frame(width: 40, height: 6)
+                                .padding(.bottom)
+                        }.frame(height : 40)
+                        .frame(maxWidth : .infinity)
+                        .background(Color.white.opacity(0.00001))
+                        .gesture(dragGesture)
+                        content()
+                    Spacer()
+                    }
+                .frame(height : currHeight)
+                .frame(maxWidth : .infinity)
+                .background(
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 30)
+                        Rectangle()
+                            .frame(height : currHeight / 2)
+                        
+                    }.foregroundColor(.white)
+                )
+                .animation(isDragging ? nil : .easeInOut(duration: 0.45))
+                .onDisappear{
+                    isShowing = false
+                }
+                .onAppear{
+                    currHeight = minHeight
+                }
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+        .ignoresSafeArea()
+        .animation(.easeInOut)
+    }
+    
+    
+    
+    @State private var prevDragTransition = CGSize.zero
+    var dragGesture : some Gesture {
+        DragGesture(minimumDistance: 0, coordinateSpace: .global)
+            .onChanged { val in
+                if(!isDragging) {
+                    isDragging = true
+                }
+                let dragAmount = val.translation.height - prevDragTransition.height
+                if(currHeight > maxHeight || currHeight < minHeight) {
+                    currHeight -= dragAmount / 6
+                } else {
+                    currHeight -= dragAmount
+                }
+                
+                prevDragTransition = val.translation
+            }
+            .onEnded { val in
+                prevDragTransition = .zero
+                isDragging = false
+                if currHeight > maxHeight {
+                    currHeight = minHeight
+                } else if currHeight < minHeight {
+                    isShowing = false
+                }
+            }
+    }
+}
+struct Components_Previews: PreviewProvider {
+    static var previews: some View {
+        Group{
+            MainView()
+        }
+    }
 }
 

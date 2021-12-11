@@ -11,7 +11,7 @@ import SwiftUI
 
 
 struct MessageViewHeader : View {
-    var member : Member
+    var member : User
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var videoCallIsPresented = false
     @State var audioCallIsPresented = false
@@ -33,7 +33,7 @@ struct MessageViewHeader : View {
                 Spacer()
                 HStack{
                     Button(action: {
-                        videoCallIsPresented.toggle()
+                        videoCallIsPresented = true
                     }, label: {
                         Image(systemName: "camera.aperture")
                             .frame(width : 40, height: 40)
@@ -56,7 +56,7 @@ struct MessageViewHeader : View {
                             .padding(.top)
                     })
                     Button(action: {
-                        audioCallIsPresented.toggle()
+                        audioCallIsPresented = true
                     }, label: {
                         Image(systemName: "phone.fill")
                             .frame(width : 40, height: 40)
@@ -88,11 +88,15 @@ struct MessageViewHeader : View {
                 
             }
                 .offset(y : 25)
-            EmptyView().fullScreenCover(isPresented: $videoCallIsPresented, content: {
+            EmptyView().fullScreenCover(isPresented: $videoCallIsPresented, onDismiss: {
+                videoCallIsPresented = false
+            }, content: {
                 videoCall(member : member, isPresented : $videoCallIsPresented)
             })
-            EmptyView().fullScreenCover(isPresented: $audioCallIsPresented, content: {
-                audioCall(member : member, isPresented : $audioCallIsPresented)
+            EmptyView().fullScreenCover(isPresented: $audioCallIsPresented, onDismiss: {
+                audioCallIsPresented = false
+            }, content: {
+                audioCall(user : member, isPresented : $audioCallIsPresented)
             })
         }
        

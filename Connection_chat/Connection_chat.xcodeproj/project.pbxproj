@@ -14,7 +14,6 @@
 		4428BF9827625EAD0093A7D5 /* Connection_chat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4428BF9627625EAD0093A7D5 /* Connection_chat.xcdatamodeld */; };
 		4428BFA227625F4A0093A7D5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4428BFA127625F4A0093A7D5 /* MainView.swift */; };
 		4428BFA527626B4C0093A7D5 /* Tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4428BFA427626B4C0093A7D5 /* Tabbar.swift */; };
-		4428BFAB27626BD80093A7D5 /* mainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4428BFAA27626BD80093A7D5 /* mainInteractor.swift */; };
 		4428BFB0276273340093A7D5 /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4428BFAF276273340093A7D5 /* ChatListView.swift */; };
 		4428BFB7276295300093A7D5 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4428BFB6276295300093A7D5 /* Storyboard.storyboard */; };
 		4428BFBE2762A7420093A7D5 /* MainComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4428BFBD2762A7420093A7D5 /* MainComponents.swift */; };
@@ -30,6 +29,10 @@
 		4428BFEB2763AA490093A7D5 /* ChatItemMediaPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4428BFEA2763AA490093A7D5 /* ChatItemMediaPlayer.swift */; };
 		4428BFF22763AC2B0093A7D5 /* audioCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4428BFF12763AC2B0093A7D5 /* audioCall.swift */; };
 		4428BFF72763B0A50093A7D5 /* MessageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4428BFF62763B0A50093A7D5 /* MessageTextField.swift */; };
+		4428BFFB2763D1BB0093A7D5 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4428BFFA2763D1BB0093A7D5 /* ContactsView.swift */; };
+		4428C0002763DF590093A7D5 /* ContactListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4428BFFF2763DF590093A7D5 /* ContactListItem.swift */; };
+		4428C0032763E68D0093A7D5 /* ContactsRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4428C0022763E68D0093A7D5 /* ContactsRegistry.swift */; };
+		4428C0072764BB840093A7D5 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4428C0062764BB840093A7D5 /* AboutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +45,6 @@
 		4428BF9927625EAD0093A7D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4428BFA127625F4A0093A7D5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4428BFA427626B4C0093A7D5 /* Tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabbar.swift; sourceTree = "<group>"; };
-		4428BFAA27626BD80093A7D5 /* mainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainInteractor.swift; sourceTree = "<group>"; };
 		4428BFAF276273340093A7D5 /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
 		4428BFB6276295300093A7D5 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		4428BFBD2762A7420093A7D5 /* MainComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainComponents.swift; sourceTree = "<group>"; };
@@ -58,6 +60,10 @@
 		4428BFEA2763AA490093A7D5 /* ChatItemMediaPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatItemMediaPlayer.swift; sourceTree = "<group>"; };
 		4428BFF12763AC2B0093A7D5 /* audioCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audioCall.swift; sourceTree = "<group>"; };
 		4428BFF62763B0A50093A7D5 /* MessageTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTextField.swift; sourceTree = "<group>"; };
+		4428BFFA2763D1BB0093A7D5 /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
+		4428BFFF2763DF590093A7D5 /* ContactListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListItem.swift; sourceTree = "<group>"; };
+		4428C0022763E68D0093A7D5 /* ContactsRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsRegistry.swift; sourceTree = "<group>"; };
+		4428C0062764BB840093A7D5 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +120,8 @@
 		4428BFA727626B6D0093A7D5 /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				4428C0052764BB7A0093A7D5 /* about */,
+				4428BFF92763D0E30093A7D5 /* contacts */,
 				4428BFF02763AC0F0093A7D5 /* audioCall */,
 				4428BFD827638D3D0093A7D5 /* videoCall */,
 				4428BFAE276273200093A7D5 /* chat */,
@@ -128,7 +136,6 @@
 			children = (
 				4428BFA427626B4C0093A7D5 /* Tabbar.swift */,
 				4428BFA127625F4A0093A7D5 /* MainView.swift */,
-				4428BFAA27626BD80093A7D5 /* mainInteractor.swift */,
 				4428BFBD2762A7420093A7D5 /* MainComponents.swift */,
 			);
 			path = main;
@@ -180,6 +187,24 @@
 				4428BFF12763AC2B0093A7D5 /* audioCall.swift */,
 			);
 			path = audioCall;
+			sourceTree = "<group>";
+		};
+		4428BFF92763D0E30093A7D5 /* contacts */ = {
+			isa = PBXGroup;
+			children = (
+				4428BFFF2763DF590093A7D5 /* ContactListItem.swift */,
+				4428BFFA2763D1BB0093A7D5 /* ContactsView.swift */,
+				4428C0022763E68D0093A7D5 /* ContactsRegistry.swift */,
+			);
+			path = contacts;
+			sourceTree = "<group>";
+		};
+		4428C0052764BB7A0093A7D5 /* about */ = {
+			isa = PBXGroup;
+			children = (
+				4428C0062764BB840093A7D5 /* AboutView.swift */,
+			);
+			path = about;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,7 +279,9 @@
 			files = (
 				4428BFCD27635C850093A7D5 /* ChatInteractor.swift in Sources */,
 				4428BFDA27638D4E0093A7D5 /* videoCall.swift in Sources */,
+				4428C0002763DF590093A7D5 /* ContactListItem.swift in Sources */,
 				4428BFB0276273340093A7D5 /* ChatListView.swift in Sources */,
+				4428BFFB2763D1BB0093A7D5 /* ContactsView.swift in Sources */,
 				4428BFC62763354E0093A7D5 /* uiComponents.swift in Sources */,
 				4428BF9527625EAD0093A7D5 /* Persistence.swift in Sources */,
 				4428BFE52763A9A30093A7D5 /* MessageView.swift in Sources */,
@@ -263,6 +290,7 @@
 				4428BF8C27625EAB0093A7D5 /* Connection_chatApp.swift in Sources */,
 				4428BFF22763AC2B0093A7D5 /* audioCall.swift in Sources */,
 				4428BFD027635C9B0093A7D5 /* ChatTypes.swift in Sources */,
+				4428C0072764BB840093A7D5 /* AboutView.swift in Sources */,
 				4428BFEB2763AA490093A7D5 /* ChatItemMediaPlayer.swift in Sources */,
 				4428BFC3276332BA0093A7D5 /* ChatView.swift in Sources */,
 				4428BFA227625F4A0093A7D5 /* MainView.swift in Sources */,
@@ -271,7 +299,7 @@
 				4428BFE12763A95F0093A7D5 /* MessageViewHeader.swift in Sources */,
 				4428BF9827625EAD0093A7D5 /* Connection_chat.xcdatamodeld in Sources */,
 				4428BFBE2762A7420093A7D5 /* MainComponents.swift in Sources */,
-				4428BFAB27626BD80093A7D5 /* mainInteractor.swift in Sources */,
+				4428C0032763E68D0093A7D5 /* ContactsRegistry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct MessageView : View {
-    var member : Member
+    var member : User
     var message : Message
     let chatInteractor = ChatInteractor()
     

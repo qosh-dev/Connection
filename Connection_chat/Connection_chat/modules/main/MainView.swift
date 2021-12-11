@@ -10,7 +10,9 @@ import SwiftUI
 struct MainView: View {
     
     @State var selectedIndex = 0
-    
+    @State var audioCallIsPresented = false
+    @State var isShowingKeyBoard = false
+    @State var inputPhoneNumber = ""
     init() {
         UITabBar.appearance().barTintColor = .systemBackground
     }
@@ -21,34 +23,36 @@ struct MainView: View {
                 switch selectedIndex {
                 case 0 :
                     ChatListView()
-                    
                 case 1 :
-                    Text("TEMP \(selectedIndex)")
-                case 2 :
-                    Spacer()
+                    ContactsView(phoneNumberText : $inputPhoneNumber, isShowingKeyBoard : $isShowingKeyBoard)
                 default:
-                    EmptyView()
+                    AboutView()
                 }
                 
                 VStack{
                     Spacer()
-                        .sheet(isPresented: .constant(selectedIndex == 2), content: {
-                            Button(action: {
-                                selectedIndex = 0
-                            }, label: {
-                                VStack{
-                                    Spacer()
-                                    Text("FULL Screen cover")
-                                        .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-                                }
-                            }) .frame(height : 55)
-                        })
-                    
-                    
-                    
-                    Tabbar(index : $selectedIndex)
-                    
+                    Tabbar(onPhoneTabPress : {
+                        if(selectedIndex == 1 && isShowingKeyBoard ) {
+                            if(inputPhoneNumber.count >= 9) {
+                                audioCallIsPresented = true
+                            }
+                        } else {
+                            selectedIndex = 1
+                            isShowingKeyBoard = true
+                        }
+                    }, index : $selectedIndex)
                 }
+                
+                
+                //MARK: AudioCall
+                EmptyView().fullScreenCover(isPresented: $audioCallIsPresented, onDismiss : {
+                    audioCallIsPresented = false
+                }, content: {
+                    let undefinedContact = User(id: 0, name: "Some one", image: "", phoneNumber: inputPhoneNumber)
+                    
+                    audioCall(user : undefinedContact , isPresented : $audioCallIsPresented)
+                    
+                })
             }
         }
     }

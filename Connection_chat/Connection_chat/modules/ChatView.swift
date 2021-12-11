@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ChatView: View {
-    var member : Member
+    var member : User
     var chatInteractor = ChatInteractor()
     @State var messageText = ""
     

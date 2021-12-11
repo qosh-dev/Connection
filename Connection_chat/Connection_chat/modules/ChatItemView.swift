@@ -11,7 +11,7 @@ import SwiftUI
 
 struct ChatItemView : View {
     
-    var member : Member
+    var member : User
     @State var isExpanded : Bool = false
     var body : some View {
         VStack{
@@ -21,7 +21,7 @@ struct ChatItemView : View {
                 NavigationLink(
                     destination: ChatView(member : member),
                     label: {
-                        MemberImage(imageName: member.image)
+                        UserImage(imageName: member.image)
                         VStack(alignment : .leading){
                             Text(member.name)
                                 .font(.title2)
@@ -66,10 +66,7 @@ struct ChatItemView : View {
             }
             .padding(.leading)
             ChatItemMediaPlayer(member : member, isExpanded: $isExpanded)
-            
-            
         }
-//
     }
 }
 

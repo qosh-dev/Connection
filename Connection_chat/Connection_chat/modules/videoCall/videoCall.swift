@@ -9,7 +9,7 @@ import SwiftUI
 
 struct videoCall: View {
     
-    var member : Member
+    var member : User
     @Binding var isPresented : Bool
     var body: some View {
         NavigationView{

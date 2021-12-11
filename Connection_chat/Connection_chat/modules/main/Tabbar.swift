@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Tabbar: View {
-    
+    var onPhoneTabPress : () -> ()
     @Binding var index : Int
     var body: some View {
         ZStack{
@@ -39,11 +39,10 @@ struct Tabbar: View {
                 .shadow(color: .gray, radius: 5, x: 1, y: 1)
             
             RombButton(iconName: "phone.fill",action : {
-                index = 1
+                onPhoneTabPress()
+//                index = 1
             }).offset(y: -50)
         }.offset(y : 20)
-//        .blur(radius : 2)
-//        .zIndex(10)
     }
 }
 
