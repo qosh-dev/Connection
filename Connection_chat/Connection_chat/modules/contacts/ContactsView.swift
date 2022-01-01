@@ -82,19 +82,8 @@ struct ContactsView: View {
                     .padding(.bottom)
                 
                 KeyBoard
-                
             }
-            .frame(maxWidth: .infinity,maxHeight: .infinity, alignment: .top)
-            .ignoresSafeArea()
-            .animation(.easeInOut)
-        }
-        
-        .navigationBarHidden(true)
+    
     }
-}
-
-struct ContactsView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
     }
 }
